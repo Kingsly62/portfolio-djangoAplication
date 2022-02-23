@@ -18,3 +18,11 @@ def projects(request):
 
 def contact(request):
     return HttpResponse('This is my contact Home page(/)')
+
+
+def register(request):
+    return render(request, 'register.html')
+
+
+def login(request):
+    return render(request, 'login.html')
