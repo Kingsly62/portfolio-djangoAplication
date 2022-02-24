@@ -1,6 +1,8 @@
+from tempfile import template
 from django.contrib import admin
 from django.urls import path, include
 from home import views
+from django.contrib.auth.views import LoginView
 
 urlpatterns = [
     path('', views.home, name='home'),
@@ -8,5 +10,5 @@ urlpatterns = [
     path('projects', views.projects, name='projects'),
     path('contact', views.contact, name='contact'),
     path('register', views.register, name='register'),
-    path('login', views.login, name='login')
+    path('login',  views.LoginView, name='login')
 ]

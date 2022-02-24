@@ -5,8 +5,8 @@ from django.shortcuts import redirect, render, HttpResponse
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
 from django.contrib.auth import authenticate, login
-from django.template import RequestContext
 from django.contrib.auth.forms import UserCreationForm
+from . forms import RegisterForm
 
 
 # Create your views here.
@@ -29,20 +29,38 @@ def contact(request):
 
 
 def register(request):
-    form = UserCreationForm()
+    form = RegisterForm()
     if request.method == 'POST':
 
-        form = UserCreationForm(request.POST)
+        form = RegisterForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('login')
         else:
-            form = UserCreationForm()
+            form = RegisterForm()
 
     return render(request, 'register.html', {'form': form})
 
 
-def login(request):
+def LoginView(request):
+    if request.method == "POST":
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        if username and password:
+            user = authenticate(username=username, password=password)
+
+            if user is not None:
+                login(user, request)
+
+                return redirect('projects')
+
+            else:
+                messages.error(request, "Username or password is icorrect")
+
+        else:
+            messages.error(request, "fill out all the fields")
+
     return render(request, 'login.html')
 
 

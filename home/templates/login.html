@@ -1,1 +1,12 @@
+{% extends 'project.html'%} {% block content %}
 <h1>Login Form Page</h1>
+<hr />
+<form action="{url 'login'}" method="POST">
+  {% csrf_token %}
+  <label for="username">Username</label><br />
+  <input type="text" name="username" />
+  <label for="password">Password</label><br />
+  <input type="password" name="password" />
+  <input type="submit" value="Login" />
+</form>
+{% endblock %}
