@@ -1,5 +1,12 @@
 from cgitb import html
-from django.shortcuts import render, HttpResponse
+from pickle import NONE
+from django.shortcuts import redirect, render, HttpResponse
+from django.contrib import messages
+from django.contrib.auth.models import User, auth
+from django.contrib.auth import authenticate, login
+from django.template import RequestContext
+from django.contrib.auth.forms import UserCreationForm
+
 
 # Create your views here.
 
@@ -13,7 +20,7 @@ def about(request):
 
 
 def projects(request):
-    return HttpResponse('This is my projects Home page(/)')
+    return render(request, 'project.html')
 
 
 def contact(request):
@@ -21,8 +28,48 @@ def contact(request):
 
 
 def register(request):
-    return render(request, 'register.html')
+    if request.method == 'POST':
+        form = UserCreationForm()
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')
+        else:
+            form = UserCreationForm()
+
+    return render(request, 'register.html', {'form': form})
 
 
 def login(request):
     return render(request, 'login.html')
+
+
+# if request.method == "POST":
+#         fname = request.POST['fname']
+#         lname = request.POST['lname']
+#         username = request.POST['username']
+#         email = request.POST['email']
+#         pass1 = request.POST['pass1']
+#         pass2 = request.POST['pass2']
+
+#         if pass1 == pass2:
+#             if User.objects.filter(username=username).exists():
+#                 messages.error(request, 'Username already taken')
+#                 if User.objects.filter(email=email).exists():
+#                     messages.error(request, 'Email already used/taken')
+#                 else:
+#                     user = User.objects.create(
+#                         username=username, first_name=fname, last_name=lname, email=email, password=pass1)
+#                     user.save()
+
+#                     if user is not None:
+#                         login(request, user)
+
+#                         user.register()
+
+#                     return render(request, 'auth_lifecycle/login.html',
+#                                   context_instance=RequestContext(request))
+#                     # return HttpResponse(request, 'Register succesfully and logged in')
+
+#     else:
+#         return render(request, 'register.html', {"url 'register'"})
