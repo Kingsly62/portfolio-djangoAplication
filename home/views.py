@@ -1,4 +1,5 @@
 from cgitb import html
+from multiprocessing import context
 from pickle import NONE
 from django.shortcuts import redirect, render, HttpResponse
 from django.contrib import messages
@@ -28,8 +29,9 @@ def contact(request):
 
 
 def register(request):
+    form = UserCreationForm()
     if request.method == 'POST':
-        form = UserCreationForm()
+
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
