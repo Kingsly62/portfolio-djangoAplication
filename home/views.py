@@ -1,6 +1,5 @@
 from cgitb import html
 from multiprocessing import context
-from pickle import NONE
 from django.shortcuts import redirect, render, HttpResponse
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
@@ -9,6 +8,7 @@ from django.contrib.auth.forms import UserCreationForm
 from . forms import RegisterForm
 from django.conf import settings
 from django.core.mail import send_mail
+from .models import Photo
 
 
 # Create your views here.
