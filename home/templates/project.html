@@ -31,6 +31,14 @@
       <div align="center">
         <h3 style="color: black"><a href="{{ new_url }}">{{ new_url }}</a></h3>
       </div>
+      {% if new_url != NULL%}
+      <img
+        src=".../file{{new_url}}"
+        alt="Image source"
+        width="30"
+        height="30"
+      />
+      {% endif %}
     </div>
   </body>
 </html>
