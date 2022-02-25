@@ -35,7 +35,14 @@ def about(request):
 
 
 def projects(request):
-    return render(request, 'project.html')
+    if request.method == 'POST':
+        new_photo = Photo(
+            file=request.FILES['img']
+        )
+        new_photo.save()
+        return render(request, 'project.html', {'new_url': str('localhost:8000'+new_photo.file.url)})
+    else:
+        return render(request, 'project.html')
 
 
 def contact(request):
