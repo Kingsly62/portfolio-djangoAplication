@@ -44,7 +44,32 @@
     <div class="button">
       <button type="start"><a href="about">start</a></button>
     </div>
+
+    <div class="footer">
+      <form action="" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="exampleEmailInput">Subject</label>
+          <input type="text" name="subject" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="exampleEmailInput">Message</label>
+          <input type="text" name="message" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="exampleEmailInput">Email</label>
+          <input type="email" name="email" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary">Send</button>
+      </form>
+    </div>
     <script src="" async defer></script>
   </body>
 </html>
-<style></style>
+<style>
+  .footer {
+    top: 40%;
+    position: absolute;
+    float: right;
+  }
+</style>

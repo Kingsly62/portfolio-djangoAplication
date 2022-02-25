@@ -7,13 +7,27 @@ from django.contrib.auth.models import User, auth
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import UserCreationForm
 from . forms import RegisterForm
+from django.conf import settings
+from django.core.mail import send_mail
 
 
 # Create your views here.
 
 
 def home(request):
-    return render(request, 'home.html')
+    if request.method == "POST":
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+        email = request.POST.get('email')
+
+        send_mail(subject, message, settings.EMAIL_HOST_USER,
+                  [email], fail_silently=False)
+        return render(request, 'email.html', {'email': email})
+    return render(request, 'home.html', {})
+
+
+def email(request):
+    return render(request, 'email.html')
 
 
 def about(request):

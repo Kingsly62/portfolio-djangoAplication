@@ -2,7 +2,7 @@
 
 {% block content %}
 <h1>Register Acccount </h2><hr>
-<form method="POST">
+<form action="{% url 'register'%}" method="POST">
  {% csrf_token %}
  <label for="username">Username</label><br>
  {{form.username}}<br>
