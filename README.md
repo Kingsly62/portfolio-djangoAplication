@@ -18,7 +18,7 @@ These are the behaviours/features that the application implements for use by a u
 
 ### Link to my Github Account(project)
 
-Get started:
+Get started:https://github.com/Kingsly62/portfolio-djangoAplication
 
 ### Heroku live link to my website
 
@@ -26,9 +26,9 @@ Get started:
 
 ### SetUp / Installation Requirements
 
-- $ pip install flask
+- $ pip install django
 - $ pip install newsapi-python
-- $ pip install gunicorn
+- $ pip
 
 ##### Prerequisites
 
