@@ -27,7 +27,7 @@ Get started:https://github.com/Kingsly62/portfolio-djangoAplication
 ### SetUp / Installation Requirements
 
 - $ pip install django
-- $ pip install newsapi-python
+- $ pip
 - $ pip
 
 ##### Prerequisites
@@ -48,9 +48,9 @@ To run the application, in your terminal:
 
 - $ python3.9 -m venv --without-pip virtual
 - $ source virtual/bin/activate
-- $ pip install flask
+- $ pip install django
 - $ curl https://bootstrap.pypa.io/get-pip.py | python3.9
-- $python3 main.py
+- $ python3 manage.py runserver
 
 ### Technologies Used
 
