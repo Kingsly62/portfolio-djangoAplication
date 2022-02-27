@@ -99,7 +99,6 @@ def post(request):
             form = ImageForm()
             img = Image.objects.all()
             return render(request, 'post.html', {'img': img, 'form': form})
-    return render(request, 'post.html')
 # if request.method == "POST":
 #         fname = request.POST['fname']
 #         lname = request.POST['lname']
