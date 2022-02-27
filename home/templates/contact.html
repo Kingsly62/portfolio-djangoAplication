@@ -13,7 +13,7 @@
     <div class="container">
       <div style="text-align: center">
         <h2>Contact Us</h2>
-        <p>Swing by for a cup of coffee, or leave us a message:</p>
+        <hr />
       </div>
       <div class="row">
         <div class="column">
@@ -26,14 +26,14 @@
               type="text"
               id="fname"
               name="firstname"
-              placeholder="Your name.."
+              placeholder="your first name.."
             />
             <label for="lname">Last Name</label>
             <input
               type="text"
               id="lname"
               name="lastname"
-              placeholder="Your last name.."
+              placeholder="your last name.."
             />
 
             <label for="subject">Subject</label>
@@ -62,7 +62,6 @@
     box-sizing: border-box;
   }
 
-  /* Style inputs */
   input[type="text"],
   select,
   textarea {
@@ -72,6 +71,7 @@
     margin-top: 6px;
     margin-bottom: 16px;
     resize: vertical;
+    border-radius: 10px;
   }
 
   input[type="submit"] {
@@ -80,20 +80,19 @@
     padding: 12px 20px;
     border: none;
     cursor: pointer;
+    border-radius: 15px;
   }
 
   input[type="submit"]:hover {
     background-color: #45a049;
   }
 
-  /* Style the container/contact section */
   .container {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 10px;
   }
 
-  /* Create two columns that float next to eachother */
   .column {
     float: left;
     width: 50%;
@@ -101,7 +100,6 @@
     padding: 20px;
   }
 
-  /* Clear floats after the columns */
   .row:after {
     content: "";
     display: table;
