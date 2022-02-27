@@ -14,31 +14,42 @@
     />
   </head>
   <body>
-    <div class="main-block">
-      <h1>Photo Share</h1>
-      <form enctype="multipart/form-data" action="" method="POST">
-        {% csrf_token %}
-        <hr />
-        <br /><br />
-        <input type="file" name="img" id="img" required />
-        <br /><br />
-
-        <div class="btn-block">
-          <button type="submit" href="/">Submit</button>
-          <h4>Copy or share Link</h4>
-        </div>
-      </form>
-      <div align="center">
-        <h3 style="color: black"><a href="{{ new_url }}">{{ new_url }}</a></h3>
+    <div class="container">
+      <div class="button">
+        <button type="back"><a href="{% url 'home'%}">Back</a></button>
       </div>
-      {% if new_url != NULL%}
-      <img
-        src=".../file{{new_url}}"
-        alt="Image source"
-        width="30"
-        height="30"
-      />
-      {% endif %}
+      <div class="main-block">
+        <h1>Photo Share Gallery</h1>
+        <form enctype="multipart/form-data" action="" method="POST">
+          {% csrf_token %}
+          <hr />
+          <br /><br />
+          <input type="file" name="img" id="img" required />
+          <br /><br />
+
+          <div class="btn-block">
+            <button type="submit" href="/">POST</button>
+            <h4>Copy or share Link</h4>
+            
+        </form>
+        <div align="center">
+          <h3 style="color: black">
+            <a href="{{ new_url }}">{{ new_url }}</a>
+          </h3>
+        </div>
+        {% if new_url != NULL%}
+        <img
+          src=".../file{{new_url}}"
+          alt="Image source"
+          width="30"
+          height="30"
+        />
+        {% endif %}
+      </div>
+      <div class="delete">
+        <button type="delete">Delete</button>
+      </div>
+    </div>
     </div>
   </body>
 </html>
@@ -75,7 +86,7 @@
     opacity: 0.3;
   }
   .main-block {
-    width: 70%;
+    width: 60vw;
     height: 60vh;
     padding: 10px 0;
     margin: auto;
@@ -173,4 +184,27 @@
   button:hover {
     background: #26a9e0;
   }
+
+  button[type="back"]a {
+    text-decoration: none;
+  }
+
+  button[type="back"] {
+    width: 10%;
+    text-decoration: none;
+    border: none;
+  }
+
+  .button {
+    margin-left: -10%;
+  }
+
+  button[type=delete]{
+    width: 10%;
+    color: black;
+    background: red;
+    margin-left: 85%;
+  }
+
+  
 </style>

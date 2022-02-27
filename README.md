@@ -13,8 +13,7 @@ These are the behaviours/features that the application implements for use by a u
 #### As a user I would like:
 
 - To create photo gallerly where i can upload my photos by clicking start button.
-- Receiives daily news updates
-- Get more news from different countries as it updates it self.
+- Share the link with users
 
 ### Link to my Github Account(project)
 
@@ -27,13 +26,12 @@ Get started:https://github.com/Kingsly62/portfolio-djangoAplication
 ### SetUp / Installation Requirements
 
 - $ pip install django
-- $ pip
-- $ pip
+- $ pip install Pillow
+- $ pip install decouple
 
 ##### Prerequisites
 
 - python3.9
-- pip
 
 ### Cloning
 
