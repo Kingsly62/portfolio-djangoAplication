@@ -85,6 +85,9 @@ def LoginView(request):
     return render(request, 'login.html')
 
 
+def post(request):
+
+    return render(request, 'post.html')
 # if request.method == "POST":
 #         fname = request.POST['fname']
 #         lname = request.POST['lname']
