@@ -9,6 +9,8 @@ from . forms import RegisterForm
 from django.conf import settings
 from django.core.mail import send_mail
 from .models import Photo
+from .forms import ImageForm
+from .models import Image
 
 
 # Create your views here.
@@ -86,7 +88,17 @@ def LoginView(request):
 
 
 def post(request):
+    if request.method == 'POST':
+        form = ImageForm(data=request.POST, files=request.FILES)
+        if form.is_valid():
+            form.save()
+            obj = form.instance
+            return render(request, 'post.html', {'obj': obj})
 
+        else:
+            form = ImageForm()
+            img = Image.objects.all()
+            return render(request, 'post.html', {'img': img, 'form': form})
     return render(request, 'post.html')
 # if request.method == "POST":
 #         fname = request.POST['fname']
