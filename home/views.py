@@ -1,5 +1,6 @@
 from cgitb import html
 from multiprocessing import context
+from urllib.request import Request
 from django.shortcuts import redirect, render, HttpResponse
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
@@ -36,6 +37,10 @@ def about(request):
     return render(request, 'about.html')
 
 
+def contact(request):
+    return render(request, 'contact.html')
+
+
 def projects(request):
     if request.method == 'POST':
         new_photo = Photo(
@@ -45,10 +50,6 @@ def projects(request):
         return render(request, 'project.html', {'new_url': str('localhost:8000'+new_photo.file.url)})
     else:
         return render(request, 'project.html')
-
-
-def contact(request):
-    return HttpResponse('This is my contact Home page(/)')
 
 
 def register(request):
