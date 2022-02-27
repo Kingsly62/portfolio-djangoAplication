@@ -98,33 +98,4 @@ def post(request):
         else:
             form = ImageForm()
             img = Image.objects.all()
-            return render(request, 'post.html', {'img': img, 'form': form})
-# if request.method == "POST":
-#         fname = request.POST['fname']
-#         lname = request.POST['lname']
-#         username = request.POST['username']
-#         email = request.POST['email']
-#         pass1 = request.POST['pass1']
-#         pass2 = request.POST['pass2']
-
-#         if pass1 == pass2:
-#             if User.objects.filter(username=username).exists():
-#                 messages.error(request, 'Username already taken')
-#                 if User.objects.filter(email=email).exists():
-#                     messages.error(request, 'Email already used/taken')
-#                 else:
-#                     user = User.objects.create(
-#                         username=username, first_name=fname, last_name=lname, email=email, password=pass1)
-#                     user.save()
-
-#                     if user is not None:
-#                         login(request, user)
-
-#                         user.register()
-
-#                     return render(request, 'auth_lifecycle/login.html',
-#                                   context_instance=RequestContext(request))
-#                     # return HttpResponse(request, 'Register succesfully and logged in')
-
-#     else:
-#         return render(request, 'register.html', {"url 'register'"})
+        return render(request, 'post.html', {'img': img, 'form': form})
