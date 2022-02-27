@@ -40,7 +40,7 @@ Get started:https://github.com/Kingsly62/portfolio-djangoAplication
 In your terminal:
 
 - $ git clone
-- $ cd NewsApi
+- $ cd https://github.com/Kingsly62/portfolio-djangoAplication
 
 ### Running the Application
 
