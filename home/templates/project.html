@@ -37,7 +37,7 @@
           <h3 style="color: black">
             <a href="{{ new_url }}">{{ new_url }}</a>
           </h3>
-          <input type="link" value="{{new_url}}">
+         
         </div>
         {% if new_url != NULL%}
         <img
@@ -49,6 +49,10 @@
         {% endif %}
       </div>
       </div>
+      <div class="copy-text">
+        <input type="link" value="{{new_url}}" style="color:blue"  class="text" >
+        <button type="link"><i class="fa fa-clone"></i></button>
+        </div>
       <div class="delete">
         <button type="delete" onclick="removeItem()">Delete</button>
       </div>
@@ -62,8 +66,72 @@
     var images = document.getElementById('images');
     images.remove()
   }
+
+  let copyText = document.querySelector('.copy-text');
+   copyText.querySelector('button').addEventListener('click', function(){
+     let input = copyText.querySelector("input.text");
+     input.select();
+     document.execCommand('copy');
+     copyText.classList.add('active');
+     
+   });
+
 </script>
 <style>
+  .copy-text button:active{
+     color: #809ce2;
+  }
+
+
+  .copy-text button:before{
+    content: "copied";
+    position: absolute;
+    top: 58%;
+    background: #5c81dc;
+    border-radius: 10px;
+    display: none;
+  }
+
+  .copy-text button:after{
+    content:"";
+    position: absolute;
+    right: 58%;
+    top: 59.8%;
+    width: 10px;
+    height: 10px;
+    background: #5c81dc;
+    transform: rotate(45deg);
+    display: none;
+  }
+
+  .copy-text button.active :before,.copy-text button.active :after{
+    display: block;
+  }
+
+   input .text{
+    padding: 10px;
+    font-size: 10px;
+    color: #555;
+    border : none;
+    outline: none;
+  }
+
+
+  .copy-text{
+    padding: 10px;
+    background: #fff;
+    width: 40%;
+    height: 6vh;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    display: flex;
+  }
+
+
+  button[type=link]{
+    width: 15%;
+  
+  }
   body {
     display: flex;
     justify-content: center;
@@ -97,7 +165,7 @@
   }
   .main-block {
     width: 60vw;
-    height: 60vh;
+    height: 80vh;
     padding: 10px 0;
     margin: auto;
     border-radius: 5px;
