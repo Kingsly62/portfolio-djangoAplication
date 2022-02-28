@@ -6,6 +6,12 @@
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"
       rel="stylesheet"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js" integrity="sha512-YSdqvJoZr83hj76AIVdOcvLWYMWzy6sJyIMic2aQz5kh2bPTd9dzY3NtdeEAzPp/PhgZqr4aJObB3ym/vsItMg==" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/fontawesome.min.js" integrity="sha512-PoFg70xtc+rAkD9xsjaZwIMkhkgbl1TkoaRrgucfsct7SVy9KvTj5LtECit+ZjQ3ts+7xWzgfHOGzdolfWEgrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+
+
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
@@ -33,12 +39,7 @@
             
         </form>
         <div id="images">
-        <div align="center">
-          <h3 style="color: black">
-            <a href="{{ new_url }}">{{ new_url }}</a>
-          </h3>
-         
-        </div>
+      
         {% if new_url != NULL%}
         <img
           src="{{new_url}}"
@@ -51,11 +52,34 @@
       </div>
       <div class="copy-text">
         <input type="link" value="{{new_url}}" style="color:blue"  class="text" >
-        <button type="link"><i class="fa fa-clone"></i></button>
+        <button onclick="copyMe()" type="link"><i class="fa fa-clone"></i></button>
         </div>
       <div class="delete">
         <button type="delete" onclick="removeItem()">Delete</button>
       </div>
+
+      <div class="cont">
+        <button type="share" class="share-btn">
+          <i class="fas fa-share-alt"></i>
+        </button>
+        <div class="share-options">
+        <p class="title">Share</p>
+        <div class="social-media">
+          <button class="social-media-btn" type="media"><a href="https://about.instagram.com/"><i class="fab fa-instagram"></i></a></button>
+          <button class="social-media-btn" type="media"><a href="https://mobile.twitter.com/explore"><i class="fab fa-twitter"></i></a></button>
+          <button class="social-media-btn" type="media"><a href="https://www.facebook.com/
+            "><i class="fab fa-facebook"></i></a></button>
+          
+          <button class="social-media-btn" type="media"><a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a></button>
+            
+          <button class="social-media-btn" type="media"><a href="https://web.whatsapp.com/"><i class="fab fa-whatsapp"></i></a></button>
+        </div>
+       <div class="link-container">
+         <input class="link" type="links" value="{{new_url}}">
+         <button onclick="copyMe()" type="link"><i class="fa fa-clone"></i></button>
+       </div>
+        </div>
+       </div>
     </div>
     </div>
   </body>
@@ -76,20 +100,163 @@
      
    });
 
+   function copyMe(){
+     alert("Copied To Clipbord")
+   }
+
+
+   const shareBtn = document.querySelector('.share-btn');
+   const shareOptions = document.querySelector('.share-options');
+
+   shareBtn.addEventListener('click',()=>{
+     shareOptions.classList.toggle('active');
+   })
 </script>
 <style>
+  .share-options.active .title,
+  .share-options.active .social-media,
+  .share-options.active .link-container{
+    opacity: 1;
+    transtion: .5s;
+    transtion-delay: .5s;
+  }
+
+
+  .link-container{
+    transtion-delay: 0s;
+    opacity: 0;
+    transtion-delay: 0s;
+    width: 100%;
+    position: relative;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border-radius: 40px;
+    background-color: #fff;
+    overflow: hidden;
+    padding: 0 10px;
+  }
+
+
+  .social-media-btn:nth-child(1){
+    background: #864C9C;
+  }
+
+  .social-media-btn:nth-child(2){
+    background: #1DA1F2;
+  }
+
+  .social-media-btn:nth-child(3){
+    background: #1877F2;
+  }
+
+  .social-media-btn:nth-child(4){
+    background: #E4405F;
+  }
+
+  .social-media-btn:nth-child(5){
+    background: ;
+  }
+
+  .social-media{
+    transtion-delay: 0s;
+    opacity: 0;
+    transtion-delay: 0s;
+    height: 250px;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px 0;
+  }
+
+  .social-media-btn{
+    border: none;
+    width: 50px;
+    border-radius: 50%;
+    background: #000;
+    color: #fff;
+    line-height: 50px;
+    font-size: 25px;
+    cursor: pointer;
+    margin: 0 5px;
+    text-align: center;
+  }
+
+button[type=media]{
+  width: 20%;
+}
+
+.share-btn{
+   z-index: 2;
+   font-size: 30px;
+   padding-top: 2.5px;
+   padding-right: 3px;
+   color:red;
+   background: #fff;
+}
+
+.share-options{
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  width: auto;
+  transform: scale(0);
+  height: auto;
+  transform-origin: bottom-left;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background: rgba(15,15,15,0.5);
+  color: #fff;
+  padding: 20px;
+  font-family: 'roboto';
+  transtion: .5s;
+  transtion-delay: .5s;
+}
+
+.share-options.active{
+  transform: scale(1);
+  transtion-delay: 0s;
+}
+
+.title{
+  transtion-delay: 0s;
+  opacity: 0;
+  transtion-delay: 0s;
+  font-size: 20px;
+  text-transform: capitalize;
+  border-bottom:1px solid #fff;
+  width: fit-content;
+  padding:0 20px 3px 0;
+}
+
+  button[type=share]{
+    width: 60px;
+    height: 60px;
+    background: green;
+    color: black;
+    top: 80%;
+    position: absolute;
+    margin-left: 30%;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  #images{
+    top: 60%;
+    position: absolute;
+  }
   .copy-text button:active{
      color: #809ce2;
   }
 
 
   .copy-text button:before{
-    content: "copied";
+    content: "Copy";
     position: absolute;
-    top: 58%;
+    top: 51%;
     background: #5c81dc;
     border-radius: 10px;
-    display: none;
   }
 
   .copy-text button:after{
