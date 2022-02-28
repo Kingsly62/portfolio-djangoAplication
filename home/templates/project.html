@@ -32,6 +32,7 @@
             <h4>Copy or share Link</h4>
             
         </form>
+        <div id="images">
         <div align="center">
           <h3 style="color: black">
             <a href="{{ new_url }}">{{ new_url }}</a>
@@ -46,13 +47,21 @@
         />
         {% endif %}
       </div>
+      </div>
       <div class="delete">
-        <button type="delete">Delete</button>
+        <button type="delete" onclick="removeItem()">Delete</button>
       </div>
     </div>
     </div>
   </body>
 </html>
+
+<script>
+  function removeItem(){
+    var images = document.getElementById('images');
+    images.remove()
+  }
+</script>
 <style>
   body {
     display: flex;
