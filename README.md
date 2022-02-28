@@ -29,6 +29,7 @@ Get started:https://github.com/Kingsly62/portfolio-djangoAplication
 - $ pip install Pillow
 - $ pip install decouple
 - $ pip install gunicorn
+- $ pip install whitenoise
 
 ##### Prerequisites
 
