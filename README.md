@@ -35,6 +35,7 @@ Get started:https://github.com/Kingsly62/portfolio-djangoAplication
 - $ pip install decouple
 - $ pip install gunicorn
 - $ pip install whitenoise
+- $ pip install django-heroku
 
 ##### Prerequisites
 
@@ -71,6 +72,7 @@ To run the application, in your terminal:
 - Pure Python3.9
 - Flask (Python Micro framework)
 - Vanilla JavaScript
+- Bootstarp5
 
 #### License
 
