@@ -41,6 +41,10 @@ def contact(request):
     return render(request, 'contact.html')
 
 
+def pro(request):
+    return render(request, 'pro.html')
+
+
 def projects(request):
     if request.method == 'POST':
         new_photo = Photo(

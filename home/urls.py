@@ -12,5 +12,6 @@ urlpatterns = [
     path('login',  views.LoginView, name='login'),
     path('email', views.email, name='email'),
     path('post', views.post, name='post'),
-    path('contact', views.contact, name='contact')
+    path('contact', views.contact, name='contact'),
+    path('pro', views.pro, name='pro')
 ]
