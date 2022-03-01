@@ -60,8 +60,8 @@ To run the application, in your terminal:
 
 ### Contact Information
 
-- PhoneNo1: 0758249045
-- PhoneNo2: 0708657996
+- PhoneNo1: +(254)758249045
+- PhoneNo2: +(254)708657996
 - Facebook: Clinton Kioge
 - WhatsApp: +(254)758249045
 - Email: clintonmakosh72@gmail.com
