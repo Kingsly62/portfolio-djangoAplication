@@ -23,6 +23,11 @@ Get started:https://github.com/Kingsly62/portfolio-djangoAplication
 
 [Click]()
 
+### Test Instances For the Application(app)
+
+- $ python3 -m venv virtual
+- $ python3 manage.py test home
+
 ### SetUp / Installation Requirements
 
 - $ pip install django
@@ -39,8 +44,9 @@ Get started:https://github.com/Kingsly62/portfolio-djangoAplication
 
 In your terminal:
 
+- Link to clone:https://github.com/Kingsly62/portfolio-djangoAplication
 - $ git clone
-- $ cd https://github.com/Kingsly62/portfolio-djangoAplication
+- $ cd portfolio-djangoApplication
 
 ### Running the Application
 

@@ -40,12 +40,12 @@
         </form>
         <div id="images">
       
-        {% if new_url != NULL%}
+        {% if new_url %}
         <img
           src="{{new_url}}"
           alt="Image source"
-          width="30"
-          height="30"
+          width="400"
+          height="400"
         />
         {% endif %}
       </div>
@@ -333,7 +333,7 @@ button[type=media]{
     opacity: 0.3;
   }
   .main-block {
-    width: 60vw;
+    width: 80vw;
     height: 80vh;
     padding: 10px 0;
     margin: auto;
