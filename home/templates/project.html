@@ -26,7 +26,7 @@
       </div>
       <div class="main-block">
         <h1>Photo Share Gallery</h1>
-        <form enctype="multipart/form-data" action="" method="POST">
+        <form method="POST" enctype="multipart/form-data" >
           {% csrf_token %}
           <hr />
           <br /><br />
@@ -41,11 +41,12 @@
         <div id="images">
       
         {% if new_url %}
+        {{new_url.url}}
         <img
-          src="{{new_url}}"
+          src="{{new_url.url}}"
           alt="Image source"
-          width="400"
-          height="400"
+          width="100"
+          height="100"
         />
         {% endif %}
       </div>
@@ -151,11 +152,11 @@
   }
 
   .social-media-btn:nth-child(4){
-    background: #E4405F;
+    background: red;
   }
 
   .social-media-btn:nth-child(5){
-    background: ;
+    background: green;
   }
 
   .social-media{
@@ -173,7 +174,7 @@
   .social-media-btn{
     border: none;
     width: 50px;
-    border-radius: 50%;
+    border-radius: 100%;
     background: #000;
     color: #fff;
     line-height: 50px;
