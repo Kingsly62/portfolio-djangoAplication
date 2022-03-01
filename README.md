@@ -21,7 +21,7 @@ Get started:https://github.com/Kingsly62/portfolio-djangoAplication
 
 ### Heroku live link to my website
 
-[Click]()
+[Click](https://gallerly-application.herokuapp.com/)
 
 ### Test Instances For the Application(app)
 
@@ -57,6 +57,14 @@ To run the application, in your terminal:
 - $ pip install django
 - $ curl https://bootstrap.pypa.io/get-pip.py | python3.9
 - $ python3 manage.py runserver
+
+### Contact Information
+
+- PhoneNo1: 0758249045
+- PhoneNo2: 0708657996
+- Facebook: Clinton Koige
+- WhatsApp: +(254)758249045
+- Email: clintonmakosh72@gmail.com
 
 ### Technologies Used
 
